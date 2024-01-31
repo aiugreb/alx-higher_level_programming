@@ -1,18 +1,15 @@
 #!/usr/bin/python3
 """
-This is the "0-add_integer" module.
-The 0-add_integer module supplies one function, add_integer(a, b).
+
+Function that adds 2 integers
+
 """
-
-
-def add_integer(a, b):
-    """Return the addition of two numbers."""
-    if type(a) is not int and type(a) is not float:
+def add_integer(a, b=98):
+    """
+    These comments are stupid
+    """
+    if not (type(a) is float or type(a) is int):
         raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
+    elif not (type(b) is float or type(b) is int):
         raise TypeError("b must be an integer")
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
-    return a + b
+    return int(a) + int(b)
