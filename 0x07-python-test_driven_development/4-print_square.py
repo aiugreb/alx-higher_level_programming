@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-
-Function that prints a square with the character "#"
-
-"""
+"""Function that prints a square with the character #"""
 
 
 def print_square(size):
@@ -16,8 +12,6 @@ def print_square(size):
     if size < 0:
         raise ValueError("size must be >= 0")
 
-    print((("#" * size + "\n") * size), end="")
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/4-print_square.txt")
+    for i in range(size):
+        [print("#", end="") for j in range(size)]
+        print("")
