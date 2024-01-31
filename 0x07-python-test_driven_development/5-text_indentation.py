@@ -7,11 +7,17 @@ Function that prints a text with 2 new lines after each '.', '?', ':'
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    newText = ""
-    for i in range(len(text)):
-        if not i == 0 and text[i] == " " and text[i - 1] in ".?:":
+    i = 0
+    while i < len(text) and text[i] == ' ':
+        i += 1
+
+    while i < len(text):
+        print(text[i], end="")
+        if text[i] == "\n" or text[i] in ".?:":
+            if text[i] in ".?:":
+                print("\n")
+            i += 1
+            while i < len(text) and text[i] == ' ':
+                i += 1
             continue
-        newText += text[i]
-        if text[i] in ".?:":
-            newText += "\n\n"
-    print(newText, end="")
+        i += 1
