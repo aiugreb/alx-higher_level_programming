@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-
 function that divides all elements of a matrix
-
 """
 
 
@@ -22,7 +20,3 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     return [[round(y / div, 2) for y in x] for x in matrix]
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/2-matrix_divided.txt")
