@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""states models
-"""
+"""states models"""
 
 import MySQLdb
 import sys
