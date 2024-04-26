@@ -1,26 +1,16 @@
 #!/usr/bin/python3
-"""module doc"""
+""" finds peak in a list of ints """
 
 def find_peak(list_of_integers):
-    """Finds doc"""
+    """Finds the peak"""
 
-    if list_of_integers == [] or list_of_integers is None:
-        return None
-    
-    l, r = 0, len(list_of_integers)
-    m = int(r / 2)
-
-    if r == 1:
-        return list_of_integers[l]
-
-    if r == 2:
-        return max(list_of_integers)
-
-    if list_of_integers[m] > list_of_integers[m + 1] and\
-            list_of_integers[m] > list_of_integers[m - 1]:
-        return list_of_integers[m]
-
-    if m > 0 and list_of_integers[m] <= list_of_integers[m + 1]:
-        return find_peak(list_of_integers[m:])
-    if m > 0 and list_of_integers[m] <= list_of_integers[m - 1]:
-        return find_peak(list_of_integers[:m])
+    if list_of_integers:
+        lf = 0
+        r = len(list_of_integers) - 1
+        while lf < r:
+            m = (lf + r) // 2
+            if list_of_integers[m] > list_of_integers[m + 1]:
+                r = m
+            else:
+                lf = m + 1
+        return list_of_integers[lf]
